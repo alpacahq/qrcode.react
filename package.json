@@ -7,26 +7,18 @@
     "react-component",
     "qrcode"
   ],
-  "homepage": "http://zpao.github.io/qrcode.react",
   "main": "./lib/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "yarn run build:code && yarn run build:examples",
+    "build": "yarn run build:code",
     "build:code": "tsup src/index.tsx -d lib --format esm,cjs --dts --legacy-output --target=es2017 --platform=browser",
-    "build:examples": "tsup examples/demo.tsx -d examples --format iife --env.NODE_ENV production --minify --target=es2017 --legacy-output",
     "lint": "eslint .",
     "pretty": "prettier --write '{*,.*}.{mjs,js,json}' '**/*.{js,json}'",
     "prepare": "tsc && make clean && make all",
     "prepublish-docs": "make clean && make all",
-    "publish-docs": "gh-pages --dist=examples --src='{index.html,iife/demo.js}'",
     "test": "jest",
     "typecheck": "tsc --noEmit"
-  },
-  "author": "Paul O’Shannessy <paul@oshannessy.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zpao/qrcode.react.git"
   },
   "license": "ISC",
   "files": [
@@ -67,5 +59,8 @@
     "transform": {
       "\\.[jt]sx?$": "babel-jest"
     }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/alpacahq"
   }
 }
