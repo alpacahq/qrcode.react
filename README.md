@@ -1,5 +1,6 @@
 # qrcode.react
 
+This is a copy of qrcode.react
 A React component to generate [QR codes](http://en.wikipedia.org/wiki/QR_code) for rendering to the DOM.
 
 ## Installation
